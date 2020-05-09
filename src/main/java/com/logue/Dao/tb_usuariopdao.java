@@ -13,6 +13,7 @@ import com.logueo.model.TbUsuariop;
 public class tb_usuariopdao {
       public List<TbUsuariop> ingresoUsuario(TbUsuariop user){
     	  
+    	  
     	  List<TbUsuariop> usuarios=new ArrayList();
     	  EntityManager em;
     	  EntityManagerFactory emf; 
@@ -25,8 +26,14 @@ public class tb_usuariopdao {
     		  em.getTransaction().begin();
     		  
     		  usuarios=em.createQuery("from TbUsuariop as u where u.usuario='"+user.getUsuario()+"'and u.contrasenia='"+user.getContrasenia()+"'").getResultList();
+    		  
     				  
     		   em.getTransaction().commit(); 
+    		   
+    		    for(TbUsuariop datosid:usuarios) {
+    		    	user.setIdUsuarios(datosid.getIdUsuarios());
+    		    	System.out.println(datosid.getIdUsuarios());
+    		    }
     		  
     	  }catch(Exception e ) {
     		 System.out.println(e);

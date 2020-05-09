@@ -10,8 +10,18 @@
   	<description></description>
   	<servlet-class>com.logueo.controller.serveletController</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>serverletHistorial</servlet-name>
+  	<display-name>serverletHistorial</display-name>
+  	<description></description>
+  	<servlet-class>com.logueo.controller.serverletHistorial</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>serveletController</servlet-name>
   	<url-pattern>/serveletController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>serverletHistorial</servlet-name>
+  	<url-pattern>/serverletHistorial</url-pattern>
   </servlet-mapping>
 </web-app>

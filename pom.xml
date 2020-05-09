@@ -50,6 +50,7 @@
 
 </dependencies>
 
+
   <build>
     <finalName>logueo-hibernate</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
