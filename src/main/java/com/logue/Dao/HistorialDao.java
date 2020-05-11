@@ -44,10 +44,10 @@ public class HistorialDao {
 		
 		try {
 			em.getTransaction().begin();
-			lista=em.createQuery("SELECT his.idHistorial, his.tbUsuariop.idUsuariop,his.fecha,"
-					+ "usu.nombre_usuario"
-					+ "FROM TbHistorial AS his INNER JOIN TbUsuariop AS usu ON"
-					+ "usu.idUsuariop").getResultList();
+			lista=em.createQuery("SELECT his.idHistorial, his.tbUsuariop.idUsuarios,his.fechas,"
+					+ "usu.nombre_usuario,usu.apellido_usuario"
+					+ "FROM TbHistorial AS his "
+					+ "INNER JOIN TbUsuariop AS usu ON usu.idUsuarios= his.tbUsuariop.idUsuarios").getResultList();
 			em.getTransaction().commit();
 			
 			
