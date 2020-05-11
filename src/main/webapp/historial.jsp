@@ -17,7 +17,7 @@
     	$.post('serverletHistorial',{
     		
     	},function(respose){
-    		let datos=JSON.parse(respose);
+    		let datos=JSON.stringify(respose);
     		
     		var tabladatos=document.getElementById('tabladatos2');
     		
@@ -25,12 +25,11 @@
                 tabladatos.innerHtml += `
                 
                 	 <tr>
-                    <td>${item.idHistorial}</td>
-                    <td>${item.idUsurio}</td>
-
-                    
+                    <td>${item.IdHistorial}</td>
+                    <td>${item.IdUsurios}</td>
                     <td>${item.fecha}</td>
-                    <td>${item.nombre_usuario}</td>
+                    <td>${item.Nombre_usuario}</td>
+                    <td>${item.Apellido_usuario}</td>
                     
                     
                     
@@ -50,8 +49,10 @@
         <thead >
             <th>Id</th>
              <th>IdUsuario</th>
+                      <th>Fecha</th>
             <th>Nombre</th>
-            <th>Fecha</th>
+   
+            <th>Apellido</th>
        
         </thead>
         <tbody>
